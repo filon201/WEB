@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DragonDrive - Технические работы</title>
+    <style>
+        /* Общие настройки */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #000000, #4b0082);
+            color: #ffffff;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Логотип, который будет двигаться */
+        .logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff6347;
+            text-shadow: 0 0 10px #ff6347, 0 0 20px #ff6347;
+            animation: bounce 5s infinite ease-in-out;
+           
+        }
+
+        
+
+        /* Контейнер для статичного содержимого */
+        .container {
+            position: relative;
+            z-index: 1; /* Чтобы контент оставался под логотипом */
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Заголовок */
+        h1 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        /* Основной текст */
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Стиль кнопки */
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #ff6347;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #e65c41;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Извините за неудобства!</h1>
+        <p>В данный момент проводятся технические работы.<br> Мы скоро вернемся с улучшенным сервисом.</p>
+        <a href="#" class="button">Проверить статус</a>
+    </div>
+</body>
+</html>
