@@ -1,0 +1,294 @@
+/* Общие настройки */
+* {
+    margin: 0; /* Убираем внешние отступы у всех элементов */
+    padding: 0; /* Убираем внутренние отступы у всех элементов */
+    box-sizing: border-box; /* Включаем режим, где padding и border входят в ширину/высоту элемента */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Стили для шапки */
+header {
+    background-color: #1A1A2E;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Стили для навигации */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.left-links {
+    margin-left: 0; /* Убедитесь, что отступ слева равен нулю */
+}
+.logo {
+    margin-left: auto; /* Прижимает к правому краю */
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff6600;
+}
+
+.logo-chinese {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+nav {
+    background-color: #16213E;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    font-size: 1.1em;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #ff6600;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Стили для hero-секции */
+.hero {
+    background: linear-gradient(135deg, #1A1A2E, #16213E);
+    color: #fff;
+    padding: 150px 20px;
+    text-align: center;
+    overflow: hidden; /* Скрываем все, что выходит за пределы секции */
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: slideInFromLeft 1.5s ease-out; /* Анимация для заголовка */
+}
+
+.hero p {
+    font-size: 1.5em;
+    animation: slideInFromRight 1.5s ease-out; /* Анимация для текста */
+}
+
+/* Анимация для заголовка (появление слева) */
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Анимация для текста (появление справа) */
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Стили для фильтров */
+.filters {
+    width: 20%; /* Устанавливаем ширину блока фильтров */
+    padding: 1rem; /* Добавляем внутренние отступы */
+    background-color: #fff; /* Задаем белый фон */
+    border-radius: 8px; /* Добавляем закругленные углы */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+    margin-right: 2rem; /* Добавляем отступ справа */
+}
+
+.filter-group h3 {
+    font-size: 1.2rem; /* Устанавливаем размер шрифта */
+    margin-bottom: 0.5rem; /* Добавляем отступ снизу */
+}
+
+.filter-group label {
+    display: block; /* Делаем метки блочными элементами */
+    margin-bottom: 0.5rem; /* Добавляем отступ снизу */
+    cursor: pointer; /* Изменяем курсор на указатель при наведении */
+}
+
+.filter-group input[type="checkbox"] {
+    margin-right: 0.5rem; /* Добавляем отступ справа от чекбокса */
+}
+
+/* Стили для сетки автомобилей */
+.content-wrapper {
+    display: flex; /* Используем flexbox для размещения фильтров и сетки */
+    gap: 2rem; /* Добавляем равномерный отступ между элементами */
+    padding: 2rem; /* Добавляем внутренние отступы */
+}
+
+.car-grid {
+    width: 80%; /* Устанавливаем ширину сетки автомобилей */
+    display: flex; /* Используем flexbox для создания сетки */
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    gap: 2rem; /* Добавляем равномерный отступ между карточками */
+}
+
+.section-title {
+    width: 100%; /* Занимает всю доступную ширину */
+    font-size: 24px; /* Устанавливаем размер шрифта */
+    margin-bottom: 20px; /* Добавляем отступ снизу */
+    color: #007bff; /* Задаем цвет текста */
+}
+
+.car-card {
+    cursor: pointer; /* Изменяем курсор на указатель при наведении */
+    background: #fff; /* Задаем белый фон */
+    border: 1px solid #e1e1e1; /* Добавляем границу */
+    border-radius: 10px; /* Добавляем закругленные углы */
+    padding: 20px; /* Добавляем внутренние отступы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Добавляем плавные анимации */
+    width: calc(33.333% - 20px); /* Создаем три карточки в строке с учетом отступов */
+}
+
+.car-card:hover {
+    transform: translateY(-5px); /* При наведении двигаем карточку вверх */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Увеличиваем тень при наведении */
+}
+
+.car-card img {
+    width: 100%; /* Задаем ширину изображения */
+    border-radius: 10px; /* Добавляем закругленные углы */
+    margin-bottom: 15px; /* Добавляем отступ снизу */
+}
+
+.car-card h3 {
+    font-size: 22px; /* Устанавливаем размер шрифта */
+    margin: 0 0 10px; /* Добавляем отступ снизу */
+}
+
+.car-card p {
+    font-size: 14px; /* Устанавливаем размер шрифта */
+    color: #666; /* Задаем цвет текста */
+    margin: 0 0 15px; /* Добавляем отступ снизу */
+}
+
+.car-card .price {
+    font-size: 20px; /* Устанавливаем размер шрифта */
+    font-weight: bold; /* Делаем текст жирным */
+    color: #007bff; /* Задаем цвет цены */
+}
+
+.price {
+    display: block; /* Делаем цену блочным элементом */
+    font-size: 1.2rem; /* Устанавливаем размер шрифта */
+    font-weight: bold; /* Делаем текст жирным */
+    color: #ff5722; /* Задаем цвет цены */
+    padding: 1rem; /* Добавляем внутренние отступы */
+    text-align: right; /* Выравниваем текст по правому краю */
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .content-wrapper {
+        flex-direction: column; /* Переводим сетку в вертикальное расположение */
+    }
+
+    .filters {
+        width: 100%; /* Расширяем ширину блока фильтров */
+        margin-bottom: 2rem; /* Добавляем отступ снизу */
+    }
+
+    .car-grid {
+        width: 100%; /* Расширяем ширину сетки автомобилей */
+    }
+
+    .car-card {
+        width: 100%; /* Расширяем ширину карточек */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem; /* Уменьшаем размер заголовка */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Уменьшаем размер параграфа */
+    }
+
+    .car-card img {
+        height: 200px; /* Уменьшаем высоту изображения */
+    }
+}
+
+/* Стили для кнопки, прижатой к левому краю */
+.left-button {
+    margin-left: 0; /* Убираем внешний отступ слева */
+    padding-left: 0; /* Убираем внутренний отступ слева */
+    position: relative; /* Относительное позиционирование */
+    left: 0; /* Прижимаем к левому краю */
+    background-color: #ff6600; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем границу */
+    padding: 10px 20px; /* Внутренние отступы */
+    font-size: 1em; /* Размер шрифта */
+    cursor: pointer; /* Курсор в виде указателя */
+    border-radius: 5px; /* Закругленные углы */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона */
+}
+
+.left-button:hover {
+    background-color: #e65c00; /* Изменение цвета фона при наведении */
+}
