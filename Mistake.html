@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DragonDrive - Технические работы</title>
+    <style>
+        /* Общие настройки */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #000000, #4b0082);
+            color: #ffffff;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Шапка с кнопкой и лого */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Кнопка слева */
+        .back-button {
+            position: absolute;
+            left: 20px;
+            padding: 8px 15px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #ff6347;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            z-index: 2;
+        }
+
+        .back-button:hover {
+            background-color: #e65c41;
+        }
+
+        /* Логотип по центру */
+        .logo-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo-chinese {
+            font-size: 18px;
+            margin-left: 10px;
+        }
+
+        /* Основной контент */
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        /* Заголовок */
+        h1 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        /* Основной текст */
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="https://filon201.github.io/WEB/" class="back-button">Назад</a>
+        <div class="logo-container">
+            <div class="logo">
+                DragonDrive <span class="logo-chinese">龙驱动</span>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h1>Извините за неудобства!</h1>
+        <p>В данный момент проводятся технические работы.<br>Мы скоро вернемся с улучшенным сервисом.</p>
+    </div>
+</body>
+</html>

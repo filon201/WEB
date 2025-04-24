@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DragonDrive</title>
+    <link rel="stylesheet" href="css/Main.css">
+    <style>
+        .hidden_brands {
+            display: none; 
+        }
+        .hidden_services {
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" id="show-brands-btn">Марки автомобилей</a></li> 
+                <li><a href=" https://filon201.github.io/WEB/News.html">Новости и обзоры</a></li>
+                <li><a href=" https://filon201.github.io/WEB/Mistake.html">История</a></li>
+                <li><a href=" https://filon201.github.io/WEB/map.html" id="show-stations-btn">Зарядные станции</a></li>
+            </ul>
+            </ul>
+        </nav>
+        <div class="logo">
+            DragonDrive <span class="logo-chinese"> 龙驱动</span>
+        </div>
+    </header>
+    
+    <div id="brands" class="hidden_brands section">
+        <h2>Марки автомобилей</h2>
+        <div class="brand_list">
+            <div class="brand">
+                <img src="img1/LIXIANG 9/lixiang.png" alt="Lixiang">
+                <h3>Lixiang</h3>
+                <p>Современный, стильный, экономичный, надежный.</p>
+                <a href="https://filon201.github.io/WEB/Lixiang.html" class="btn">Подробнее</a>
+            </div>
+            <div class="brand">
+                <img src="img1/ZEEKR/Zeekr 001.png" alt="Zeekr">
+                <h3>Zeekr</h3>
+                <p>Электрический, технологичный, спортивный, элегантный.</p>
+                <a href="https://filon201.github.io/WEB/Zeekr.html" class="btn">Подробнее</a> 
+            </div>
+            <div class="brand">
+                <img src="img1/Gelly.jpg" alt="Geely">
+                <h3>Geely</h3>
+                <p>Доступный, инновационный, комфортный, многофункциональный.</p>
+                <a href=" https://filon201.github.io/WEB/Mistake.html" class="btn">Подробнее</a>
+            </div>
+            <div class="brand">
+                <img src="img1/Haval.png" alt="Haval">
+                <h3>Haval</h3>
+                <p>Прочный, внедорожный, просторный, удобный.</p>
+                <a href=" https://filon201.github.io/WEB//Mistake.html" class="btn">Подробнее</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <section class="banner">
+        <h1>Идеальный автомобиль 2024</h1>
+        <p>Супер просторный и супер удобный</p>
+        <a href=" https://filon201.github.io/WEB/Family.html" class="btn">Узнать</a>
+    </section>
+    <section class="banner">
+        <h1>Авто в налиичие</h1>
+        <p>Узнайте есть ли авто в наличие у дилера</p>
+        <a href=" https://filon201.github.io/WEB/Car in stock.html" class="btn">Узнать</a>
+    </section>
+   
+    <footer>
+        <p>Сведения о ценах на продукцию, содержащиеся на сайте, носят исключительно информационный характер. Указанные цены могут отличаться от действительных цен дилеров. Для получения подробной информации об актуальных ценах обращайтесь к официальным дилерам.</p>
+    </footer>
+    <footer class="footer_info">
+    <div class="footer_content">
+        <p>&copy; 2024 DragonDrive. Все права защищены.</p>
+        <ul class="social_links">
+            <li><a href="#">Telegram</a></li>
+            <li><a href="#">WhatsApp</a></li>
+            <li><a href="#">Vk</a></li>
+        </ul>
+        <div class="contact_info">
+            <p>Email: asalobov@gmail.com</p>
+            <p>Телефон: +123 456 7890</p>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        document.getElementById('show-brands-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            const brandsDiv = document.getElementById('brands');
+            if (brandsDiv.style.display === 'none' || brandsDiv.style.display === '') {
+                brandsDiv.style.display = 'block'; 
+                this.textContent = 'Скрыть марки автомобилей'; 
+            } else {
+                brandsDiv.style.display = 'none'; 
+                this.textContent = 'Марки автомобилей'; 
+            }
+        });
+
+        
+        document.getElementById('show-services-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            const servicesDiv = document.getElementById('services');
+            if (servicesDiv.style.display === 'none' || servicesDiv.style.display === '') {
+                servicesDiv.style.display = 'block'; 
+                this.textContent = 'Скрыть владельцам'; 
+            } else {
+                servicesDiv.style.display = 'none'; 
+                this.textContent = 'Владельцам'; 
+            }
+        });
+            document.getElementById('configurator-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        const brandsSection = document.getElementById('brands');
+        brandsSection.classList.remove('hidden_brands'); 
+    });
+    </script>
+    <script>
+        document.getElementById('show-stations-btn').onclick = function() {
+            window.open('map.html', '_blank');
+        }
+    </script>
+    
+</body>
+</html>

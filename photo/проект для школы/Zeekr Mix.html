@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Zeekr Mix.css">
+    <title>Zeekr Mix — Инновационный электромобиль нового поколения</title>
+    <style>
+        /* Ваши стили здесь */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div>
+                <h1>Zeekr Mix</h1>
+                <p>Компактный и технологичный электромобиль</p>
+            </div>
+            <div class="logo">
+                DragonDrive <span class="logo-chinese">龙驱动</span>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="https://filon201.github.io/WEB/Zeekr.html">Главная</a>
+            <a href="#about">О модели</a>
+            <a href="#gallery">Галерея</a>
+            <a href="#configurations">Комплектации</a>
+            <a href="#tech">Технологии</a>
+            <a href="#safety">Безопасность</a>
+            <a href="#interior">Интерьер</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#faq">FAQ</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Zeekr Mix — стиль и передовые технологии</h2>
+            <p>Компактный электромобиль с премиальным оснащением и мощной динамикой.</p>
+            <a href="#about" class="btn">Узнать больше</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container1">
+            <h2>О модели</h2>
+            <p>Zeekr Mix — это современный электрический минивэн, сочетающий стильный дизайн, передовые технологии и высокую производительность. Созданный на гибкой платформе SEA-M, он предлагает просторный и функциональный салон, идеально подходящий для семейных поездок и городских путешествий.</p>
+        </div>
+    </section>
+
+    <!-- Галерея -->
+    <section id="gallery" class="gallery">
+        <div class="container1">
+            <h2>Галерея</h2>
+            <div class="gallery-container">
+                <button class="gallery-button prev" onclick="prevImage()">&#10094;</button>
+                <div class="gallery-main">
+                    <img id="mainImage" src="img1/ZEEKR/Zeekr Mix/Zeekr Mix перед.png" alt="Zeekr Mix">
+                </div>
+                <button class="gallery-button next" onclick="nextImage()">&#10095;</button>
+            </div>
+            <div class="gallery-thumbnails">
+                <img src="img1/ZEEKR/Zeekr Mix/Zeekr Mix перед.png" alt="Zeekr Mix" onclick="changeImage(this.src)">
+                <img src="img1/ZEEKR/Zeekr Mix/Zeekr Mix бок.png" alt="Zeekr Mix" onclick="changeImage(this.src)">
+                <img src="img1/ZEEKR/Zeekr Mix/Zeekr Mix зад.png" alt="Zeekr Mix" onclick="changeImage(this.src)">
+            </div>
+        </div>
+    </section>
+
+    <!-- Комплектации -->
+    <section id="configurations" class="configurations">
+        <div class="container1">
+            <h2>Комплектации</h2>
+            <div class="item-container">
+                <!-- Первая строка: 3 комплектации -->
+                <div class="item">
+                    <h3>ZEEKR 007 Rear-Wheel</h3>
+                    <ul>
+                        <li><strong>Привод:</strong> Задний</li>
+                        <li><strong>Мощность:</strong>  422 л.с. (310 кВт)</li>
+                        <li><strong>Разгон 0-100 км/ч:</strong>  5,8 секунды</li>
+                        <li><strong>Запас хода (NEDC):</strong> 688 км</li>
+                        <li><strong>Емкость батареи:</strong> 75 кВт·ч</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3>ZEEKR 007 Four-Wheel</h3>
+                    <ul>
+                        <li><strong>Привод:</strong> Полный</li>
+                        <li><strong>Мощность:</strong> 636 л.с. (467 кВт)</li>
+                        <li><strong>Разгон 0-100 км/ч:</strong> 3,8 секунды</li>
+                        <li><strong>Запас хода (NEDC):</strong> 616 км</li>
+                        <li><strong>Емкость батареи:</strong> 100 кВт·ч</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3>ZEEKR 007 Perfomance</h3>
+                    <ul>
+                        <li><strong>Привод:</strong> Задний</li>
+                        <li><strong>Мощность:</strong> 787 л.с. (580 кВт)</li>
+                        <li><strong>Разгон 0-100 км/ч:</strong> 2,84  секунды</li>
+                        <li><strong>Запас хода (NEDC):</strong> 616 км</li>
+                        <li><strong>Емкость батареи:</strong>  100 кВт·ч</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Материалы -->
+    <section id="materials" class="materials">
+        <div class="container1">
+            <h2>Материалы</h2>
+            <div class="materials-list">
+                <div class="materials-item">
+                    <h3>Алюминий</h3>
+                    <p>Используется для создания легкой и прочной конструкции кузова, что способствует улучшению аэродинамики и экономии энергии.</p>
+                </div>
+                <div class="materials-item">
+                    <h3>Карбон</h3>
+                    <p>Применяется в определенных компонентах для снижения веса и повышения жесткости конструкции.</p>
+                </div>
+                <div class="materials-item">
+                    <h3>Экологичные материалы</h3>
+                    <p>В салоне используются переработанные материалы и натуральная кожа, что делает автомобиль более экологически ответственным выбором.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Технологии -->
+    <section id="tech" class="tech">
+        <div class="container1">
+            <h2>Технологии</h2>
+            <div class="tech-list">
+                <div class="tech-item">
+                    <h3>Автономное управление</h3>
+                    <p>Zeekr Mix оснащен системой автономного вождения уровня L2+, которая обеспечивает безопасность и комфорт на дороге.</p>
+                </div>
+                <div class="tech-item">
+                    <h3>Искусственный интеллект</h3>
+                    <p>ИИ анализирует данные с датчиков и камер, адаптируясь к окружающей среде и предугадывая действия водителя.</p>
+                </div>
+                <div class="tech-item">
+                    <h3>Энергоэффективность</h3>
+                    <p>Высокая емкость батареи и эффективная система регенерации тормозной энергии позволяют минимизировать потребление энергии.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Безопасность -->
+    <section id="safety" class="safety">
+        <div class="container1">
+            <h2>Безопасность</h2>
+            <div class="safety-list">
+                <div class="safety-item">
+                    <h3>Адаптивный круиз-контроль (ACC)</h3>
+                    <p>Поддерживает заданную скорость и дистанцию до впереди идущего автомобиля, автоматически регулируя скорость для поддержания безопасной дистанции.</p>
+                </div>
+                <div class="safety-item">
+                    <h3>Система удержания в полосе движения (LKA)</h3>
+                    <p>Помогает водителю оставаться в пределах своей полосы, корректируя рулевое управление при непреднамеренном отклонении.</p>
+                </div>
+                <div class="safety-item">
+                    <h3>Автоматическое экстренное торможение (AEB)</h3>
+                    <p>Обнаруживает потенциальные столкновения с другими транспортными средствами или пешеходами и при необходимости автоматически применяет торможение для предотвращения или смягчения удара.</p>
+                </div>
+                <div class="safety-item">
+                    <h3>Мониторинг слепых зон (BSM)</h3>
+                    <p>Предупреждает водителя о транспортных средствах, находящихся в слепых зонах, помогая избежать столкновений при смене полосы движения.</p>
+                </div>
+                <div class="safety-item">
+                    <h3>Система мониторинга водителя (DMS)</h3>
+                    <p>Отслеживает состояние водителя, выявляя признаки усталости или отвлечения, и подает предупреждения для повышения безопасности.</p>
+                </div>
+                <div class="safety-item">
+                    <h3>Система предупреждения об открытии двери</h3>
+                    <p>Перед автоматическим открытием двери проверяет наличие препятствий, предотвращая возможные инциденты.</p>
+                </div>
+                <h2>Пассивная безопасность</h2>
+                <div class="safety-item">
+                    <h3>Подушки безопасности</h3>
+                    <p>Шесть подушек безопасности включают передние подушки для водителя и пассажира, боковые подушки и шторки безопасности, обеспечивающие всестороннюю защиту.</p>
+                </div>
+                <div class="safety-item">
+                    <h3>Усиленная конструкция кузова</h3>
+                    <p>Многослойные противоударные балки способны выдерживать боковое ударное усилие.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Интерьер -->
+    <section id="interior" class="interior">
+        <div class="container1">
+            <h2>Интерьер</h2>
+            <div class="interior-list">
+                <div class="interior-item">
+                    <h3>Сиденья</h3>
+                    <p>Натуральная кожа Nappa с подогревом, вентиляцией и функцией массажа обеспечивает высокий уровень комфорта в любых условиях.</p>
+                </div>
+                <div class="interior-item">
+                    <h3>Потолок</h3>
+                    <p>Мягкая микрофибра на растительной основе делает салон уютным и премиальным.</p>
+                </div>
+                <div class="interior-item">
+                    <h3>Отделка</h3>
+                    <p>Использование замши Alcantara и мягкого пластика придает интерьеру стильный и современный вид.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Функции -->
+    <section id="functions" class="functions">
+        <div class="container1">
+            <h2>Функции</h2>
+            <div class="func-list">
+                <div class="func-item">
+                    <h3>Автопилот</h3>
+                    <p>Система полуавтономного вождения L2+ адаптируется к дорожным условиям и обеспечивает комфортное управление.</p>
+                </div>
+                <div class="func-item">
+                    <h3>Мультимедиа</h3>
+                    <p>14,6-дюймовый сенсорный экран с поддержкой голосового управления и встроенной навигацией.</p>
+                </div>
+                <div class="func-item">
+                    <h3>Эко-режим</h3>
+                    <p>Режим оптимизации работы системы для минимизации расхода энергии.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <div class="container1">
+            <h2>Отзывы</h2>
+            <div class="review-list">
+                <div class="review-item">
+                    <p>"Zeekr Mix — это идеальный семейный электромобиль с продвинутыми технологиями и стильным дизайном!"</p>
+                </div>
+                <div class="review-item">
+                    <p>"Комфортный, просторный и динамичный — отличное решение для городских поездок и дальних путешествий!"</p>
+                </div>
+                <div class="review-item">
+                    <p>"Очень доволен покупкой! Инновации и удобство на высшем уровне!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container1">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Какова цена модели Zeekr Mix?</h3>
+                    <p>Цена зависит от комплектации. Точные цены рекомендуется уточнять у официальных дилеров.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Есть ли гарантия на модель?</h3>
+                    <p>Да, на все модели предоставляется гарантия 4 года или 100 000 км пробега.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Где можно купить Zeekr Mix?</h3>
+                    <p>Модель доступна в официальных дилерских центрах. В России вы можете приобрести Zeekr Mix у официального дилера. <a href="https://zeekr-avto.ru" target="_blank" style="color: #ff6600; text-decoration: underline;">Официальный дилер Zeekr Mix в России</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Сведения о ценах на продукцию, содержащиеся на сайте, носят исключительно информационный характер. Указанные цены могут отличаться от действительных цен дилеров. Для получения подробной информации об актуальных ценах обращайтесь к официальным дилерам.</p>
+    </footer>
+    <footer class="footer_info">
+        <div class="footer_content">
+            <p>&copy; 2024 DragonDrive. Все права защищены.</p>
+            <ul class="social_links">
+                <li><a href="#">Telegram</a></li>
+                <li><a href="#">WhatsApp</a></li>
+                <li><a href="#">Vk</a></li>
+            </ul>
+            <div class="contact_info">
+                <p>Email: asalobov@gmail.com</p>
+                <p>Телефон: +123 456 7890</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = [
+            "img1/ZEEKR/Zeekr Mix/Zeekr Mix перед.png",
+            "img1/ZEEKR/Zeekr Mix/Zeekr Mix бок.png",
+            "img1/ZEEKR/Zeekr Mix/Zeekr Mix зад.png",
+        ];
+
+        // Устанавливаем первое изображение при загрузке страницы
+        document.getElementById('mainImage').src = images[currentImageIndex];
+
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+            currentImageIndex = images.indexOf(src);
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            document.getElementById('mainImage').src = images[currentImageIndex];
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.getElementById('mainImage').src = images[currentImageIndex];
+        }
+    </script>
+</body>
+</html>

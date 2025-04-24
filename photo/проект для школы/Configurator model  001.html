@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Configurator model 001.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="logo">
+        DragonDrive <span class="logo-chinese">龙驱动</span>
+    </div>
+
+    <div class="navigation-buttons">
+        <button onclick="window.location.href='https://filon201.github.io/WEB/'">Главная страница</button>
+        <button onclick="window.location.href='https://filon201.github.io/WEB/Zeekr.html'">Главная модель</button>
+    </div>
+
+    <div class="configurator">
+        <div class="car-preview">
+            <div class="welcome-message">Соберите свой автомобиль мечты</div>
+            <img id="main-image" src="" alt="Превью" class="hidden">
+            <div id="gallery-thumbnails" class="gallery-thumbnails hidden"></div>
+        </div>  
+
+        <div class="options">
+            <!-- Раздел "Комплектация" -->
+            <div class="option-section">
+                <h2>Комплектация</h2>
+                <div class="complectation">
+                    <button data-complectation="standard" onclick="updateComplectation('standard')">Стандарт</button>
+                    <button data-complectation="premium" onclick="updateComplectation('premium')">Премиум</button>
+                </div>
+                <button class="confirm-button" onclick="confirmSelection('complectation')">Сохранить выбор</button>
+            </div>
+
+            <!-- Раздел "Цвет автомобиля" -->
+            <div class="option-section">
+                <h2>Цвет автомобиля</h2>
+                <div class="colors">
+                    <button data-color="black" data-color-name="Polar night black" style="background-color: #08080a" onclick="showCarGallery('black')"></button>
+                    <button data-color="gray" data-color-name="Laser gray" style="background-color: #676968;" onclick="showCarGallery('gray')"></button>
+                    <button data-color="daylight" data-color-name="Extreme daylight" style="background-color: #d5d5d5;" onclick="showCarGallery('daylight')"></button>
+                    <button data-color="blue" data-color-name="Electric Blue" style="background-color: #5c697a;" onclick="showCarGallery('blue')"></button>
+                    <button data-color="beige" data-color-name="Extreme Blue" style="background-color:#526a9a;" onclick="showCarGallery('beige')"></button>
+                    <button data-color="orange" data-color-name="Yu Guang Orange" style="background-color: #b84f05;" onclick="showCarGallery('orange')"></button>
+                </div>
+                <button class="confirm-button" onclick="confirmSelection('color')">Сохранить выбор</button>
+            </div>
+
+            <!-- Раздел "Диски" -->
+            <div class="option-section">
+                <h2>Диски</h2>
+                <div class="disks">
+                    <button data-disk="standard" data-disk-name="21 Air Vortex" style="background-image: url('img1/ZEEKR/Zeekr 001/21 Диски Air Vortex.png');" onclick="updateDisks('standard')"></button>
+                    <button data-disk="standard2" data-disk-name="21 Arc Phantom" style="background-image: url('img1/ZEEKR/Zeekr 001/21 Диски Arc Phantom.png');" onclick="updateDisks('standard2')"></button>
+                    <button data-disk="standard3" data-disk-name="21 Multi-Radiation" style="background-image: url('img1/ZEEKR/Zeekr 001/21 Диски Multi-Radiation.png');" onclick="updateDisks('standard3')"></button>
+                    <button data-disk="sport" data-disk-name="22 Спортивные диски" style="background-image: url('img1/ZEEKR/Zeekr 001/22 Спортивные.png');" onclick="updateDisks('sport')"></button>
+                </div>
+                <button class="confirm-button" onclick="confirmSelection('disks')">Сохранить выбор</button>
+            </div>
+
+            <!-- Раздел "Салон" -->
+            <div class="option-section">
+                <h2>Салон</h2>
+                <div class="salon-materials">
+                    <button data-salon="blackt" data-salon-name="Black Carbon" onclick="showSalonGallery('blackt')" style="background-color: #000;"></button>
+                    <button data-salon="bluet" data-salon-name="Nitrogen Blue" onclick="showSalonGallery('bluet')" style="background-color: #444f61;"></button>
+                    <button data-salon="greyt" data-salon-name="Platinum Grey" onclick="showSalonGallery('greyt')" style="background-color:#7b7c81;"></button>
+                    <button data-salon="brownt" data-salon-name="Titanium Brown" onclick="showSalonGallery('brownt')" style="background-color:#ab9379;"></button>
+                </div>
+                <button class="confirm-button" onclick="confirmSelection('salon')">Сохранить выбор</button>
+            </div>
+
+            <!-- Раздел "Дополнительные вещи" -->
+            <div class="option-section">
+                <h2>Дополнительные вещи</h2>
+                <div class="additional-items">
+                    <button data-item="roof-rack" data-item-name="Багажник на крышу" onclick="updateAdditionalItems('roof-rack')" style="background-image: url('img1/additional/roof-rack.jpg');"></button>
+                    <button data-item="floor-mats" data-item-name="Коврики" onclick="updateAdditionalItems('floor-mats')" style="background-image: url('img1/additional/floor-mats.jpg');"></button>
+                    <button data-item="spoiler" data-item-name="Спойлер" onclick="updateAdditionalItems('spoiler')" style="background-image: url('img1/additional/spoiler.jpg');"></button>
+                    <button data-item="towing-hook" data-item-name="Фаркоп" onclick="updateAdditionalItems('towing-hook')" style="background-image: url('img1/additional/towing-hook.jpg');"></button>
+                </div>
+                <button class="confirm-button" onclick="confirmSelection('additional')">Сохранить выбор</button>
+            </div>
+
+            <!-- Раздел "Итоговая стоимость" -->
+            <div class="summary">
+                <h2>Итоговая стоимость</h2>
+                <ul id="summary-list">
+                    <li>Базовая цена автомобиля: <span>7 204 000 руб.</span></li>
+                </ul>
+                <p>Общая стоимость: <span id="total-cost">7 204 000</span> руб.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const mainImage = document.getElementById('main-image');
+        const galleryThumbnails = document.getElementById('gallery-thumbnails');
+        const welcomeMessage = document.querySelector('.welcome-message');
+        const summaryList = document.getElementById('summary-list');
+        const totalCost = document.getElementById('total-cost');
+
+        const BASE_CAR_PRICE = 7204000;
+
+        // Данные для галереи
+        const galleryData = {
+            // Фотографии кузова по цветам
+            car: {
+            black: [
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 black  перед.png', alt: 'black1' },
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 black бок.png', alt: 'black2' },
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 black зад.png', alt: 'black3' },
+            ],
+            gray: [
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 gray перед.png', alt: 'gray1' }, 
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 gray бок.png', alt: 'gray2' },
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 gray зад.png', alt: 'gray3' },
+            ],
+            daylight: [
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 daylight перед.png', alt: 'daylight1' }, 
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 daylight  бок.png', alt: 'daylight2' },
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 daylight  зад.png', alt: 'daylight3' },
+            ],
+            blue: [
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 blue перед.png', alt: 'blue1' }, 
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 blue бок.png', alt: 'blue2' },
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 blue зад.png', alt: 'blue3' },
+            ],
+            beige: [
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 blue2  перед .png', alt: 'beige1' }, 
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 blue2   бок.png', alt: 'beige2' },
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 blue2  зад.png', alt: 'beige3' },
+            ],
+            orange: [
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 orange перед.png', alt: 'orange1' }, 
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 orange бок.png', alt: 'orange2' },
+                { src: 'img1/ZEEKR/Zeekr 001/Zeekr 001 orange зад.png', alt: 'orange' },
+            ],
+            },
+            // Фотографии салона
+            salon: {
+                blackt: [
+                { src: 'img1/ZEEKR/Салон/6.jpg', alt: 'blackt1' },
+                { src: 'img1/ZEEKR/Салон/6(1).jpg', alt: 'blackt2' },
+            ],
+            bluet: [
+                { src: 'img1/ZEEKR/Салон/5.jpg', alt: 'bluet1' },
+                { src: 'img1/ZEEKR/Салон/5 (1).jpg', alt: 'bluet2' },
+            ],
+           greyt: [
+                { src: 'img1/ZEEKR/Салон/1.jpg', alt: 'greyt1' },
+                { src: 'img1/ZEEKR/Салон/1 (2).jpg', alt: 'greyt2' },
+            ],
+            brownt: [
+                { src: 'img1/ZEEKR/Салон/4_1.jpg', alt: 'brownt1' },
+                { src: 'img1/ZEEKR/Салон/4-_2_.jpg', alt: 'brownt2' },
+            ],
+            }
+        };
+
+        // Остальные данные (комплектации, цены и т.д.)
+        const complectationData = {
+            standard: {
+                details: ['Базовая комплектация', 'Климат-контроль', 'Кожаный руль', 'Круиз-контроль'],
+                cost: 1000000
+            },
+            premium: {
+                details: ['Премиум комплектация', 'Панорамная крыша', 'Кожаные сиденья', 'Подогрев сидений'],
+                cost: 1500000
+            }
+        };
+
+        const colorData = {
+            black: { cost: 0, name: "Polar night black" },
+            gray: { cost: 0, name: "Laser gray" },
+            daylight: { cost: 0, name: "Extreme daylight" },
+            blue: { cost: 0, name: "Electric Blue" },
+            beige: { cost: 0, name: "Extreme Blue" },
+            orange: { cost: 0, name: "Yu Guang Orange" }
+        };
+
+        const disksData = {
+            standard: { cost: 30000, name: "21 Air Vortex" },
+            standard2: { cost: 30000, name: "21 Arc Phantom" },
+            standard3: { cost: 30000, name: "21 Multi-Radiation" },
+            sport: { cost: 30000, name: "22 Спортивные диски" }
+        };
+
+        const salonData = {
+            blackt: { cost: 0, name: "Black Carbon" },
+            bluet: { cost: 0, name: "Nitrogen Blue" },
+            greyt: { cost: 0, name: "Platinum Grey" },
+            brownt: { cost: 0, name: "Titanium Brown" }
+        };
+
+        const additionalItemsData = {
+            'roof-rack': { cost: 50000, name: "Багажник на крышу" },
+            'floor-mats': { cost: 10000, name: "Коврики" },
+            'spoiler': { cost: 30000, name: "Спойлер" },
+            'towing-hook': { cost: 20000, name: "Фаркоп" }
+        };
+
+        // Выбранные опции
+        let selectedOptions = {
+            complectation: null,
+            color: null,
+            disks: null,
+            salon: null,
+            additionalItems: []
+        };
+
+        // Текущие выбранные значения
+        let currentColor = null;
+        let currentDisks = null;
+        let currentSalon = null;
+
+        // Показать галерею кузова
+        function showCarGallery(color) {
+            updateGallery('car', color);
+            selectedOptions.color = color;
+            updateActiveButtons();
+        }
+
+        // Показать галерею салона
+        function showSalonGallery(salon) {
+            updateGallery('salon', salon);
+            selectedOptions.salon = salon;
+            updateActiveButtons();
+        }
+
+        // Обновить галерею
+        function updateGallery(type, variant) {
+            galleryThumbnails.innerHTML = '';
+
+            if (galleryData[type] && galleryData[type][variant]) {
+                galleryData[type][variant].forEach(item => {
+                    const img = document.createElement('img');
+                    img.src = item.src;
+                    img.alt = item.alt;
+                    img.onclick = () => changeMainImage(item.src);
+                    galleryThumbnails.appendChild(img);
+                });
+
+                if (galleryData[type][variant].length > 0) {
+                    changeMainImage(galleryData[type][variant][0].src);
+                }
+            }
+
+            welcomeMessage.classList.add('hidden');
+            mainImage.classList.remove('hidden');
+            galleryThumbnails.classList.remove('hidden');
+        }
+
+        // Изменить основное изображение
+        function changeMainImage(image) {
+            mainImage.src = image;
+            document.querySelectorAll('.gallery-thumbnails img').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Остальные функции (updateComplectation, updateDisks, confirmSelection и т.д.)
+        function updateComplectation(type) {
+            selectedOptions.complectation = type;
+            updateActiveButtons();
+        }
+
+        function updateDisks(type) {
+            selectedOptions.disks = type;
+            updateActiveButtons();
+        }
+
+        function updateAdditionalItems(type) {
+            if (!selectedOptions.additionalItems.includes(type)) {
+                selectedOptions.additionalItems.push(type);
+            } else {
+                selectedOptions.additionalItems = selectedOptions.additionalItems.filter(item => item !== type);
+            }
+            updateActiveButtons();
+            updateSummary();
+        }
+
+        function confirmSelection(type) {
+            switch (type) {
+                case 'complectation':
+                    if (selectedOptions.complectation) updateSummary();
+                    break;
+                case 'color':
+                    currentColor = selectedOptions.color;
+                    updateSummary();
+                    break;
+                case 'disks':
+                    currentDisks = selectedOptions.disks;
+                    updateSummary();
+                    break;
+                case 'salon':
+                    currentSalon = selectedOptions.salon;
+                    updateSummary();
+                    break;
+                case 'additional':
+                    updateSummary();
+                    break;
+            }
+        }
+
+        function updateActiveButtons() {
+            document.querySelectorAll('.complectation button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.complectation === selectedOptions.complectation);
+            });
+            
+            document.querySelectorAll('.colors button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.color === selectedOptions.color);
+            });
+            
+            document.querySelectorAll('.disks button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.disk === selectedOptions.disks);
+            });
+            
+            document.querySelectorAll('.salon-materials button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.salon === selectedOptions.salon);
+            });
+            
+            document.querySelectorAll('.additional-items button').forEach(btn => {
+                btn.classList.toggle('active', selectedOptions.additionalItems.includes(btn.dataset.item));
+            });
+        }
+
+        function updateSummary() {
+            const basePriceItem = summaryList.querySelector('li:first-child');
+            summaryList.innerHTML = '';
+            summaryList.appendChild(basePriceItem);
+            
+            let total = BASE_CAR_PRICE;
+
+            if (selectedOptions.complectation) {
+                const complectation = complectationData[selectedOptions.complectation];
+                summaryList.innerHTML += `<li>Комплектация: ${complectation.details[0]} - <span>${complectation.cost.toLocaleString()} руб.</span></li>`;
+                total += complectation.cost;
+            }
+
+            if (currentColor) {
+                const color = colorData[currentColor];
+                const colorName = document.querySelector(`.colors button[data-color="${currentColor}"]`).dataset.colorName;
+                summaryList.innerHTML += `<li>Цвет: ${colorName} - <span>${color.cost.toLocaleString()} руб.</span></li>`;
+                total += color.cost;
+            }
+
+            if (currentDisks) {
+                const disks = disksData[currentDisks];
+                const diskName = document.querySelector(`.disks button[data-disk="${currentDisks}"]`).dataset.diskName;
+                summaryList.innerHTML += `<li>Диски: ${diskName} - <span>${disks.cost.toLocaleString()} руб.</span></li>`;
+                total += disks.cost;
+            }
+
+            if (currentSalon) {
+                const salon = salonData[currentSalon];
+                const salonName = document.querySelector(`.salon-materials button[data-salon="${currentSalon}"]`).dataset.salonName;
+                summaryList.innerHTML += `<li>Салон: ${salonName} - <span>${salon.cost.toLocaleString()} руб.</span></li>`;
+                total += salon.cost;
+            }
+
+            selectedOptions.additionalItems.forEach(item => {
+                const itemData = additionalItemsData[item];
+                const itemName = document.querySelector(`.additional-items button[data-item="${item}"]`).dataset.itemName;
+                summaryList.innerHTML += `<li>${itemName} - <span>${itemData.cost.toLocaleString()} руб.</span></li>`;
+                total += itemData.cost;
+            });
+
+            totalCost.textContent = total.toLocaleString();
+        }
+
+        // Инициализация
+        window.onload = function() {
+            showCarGallery('black');
+            totalCost.textContent = BASE_CAR_PRICE.toLocaleString();
+        };
+    </script>
+</body>
+</html>
